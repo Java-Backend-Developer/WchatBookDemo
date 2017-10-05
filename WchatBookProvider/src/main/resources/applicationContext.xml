@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context ="http://www.springframework.org/schema/context"
+       xmlns:mvc = "http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-3.1.xsd
+">
+    <context:component-scan base-package="com"></context:component-scan>
+
+    <bean id="test" class="com.test.Test">
+        <property name="environment" value="${environment}"/>
+    </bean>
+
+    <!--
+       - ===============================================
+       - 配置信息
+       - @author jjw
+       - @date 2015-6-17
+       - ===============================================
+     -->
+    <bean id="configInit" class="com.helper.ConfigInit">
+        <property name="configMap">
+            <map>
+                <entry key="file.stor" value="${file.stor}"></entry>
+                <entry key="wchat.url" value="${wchat.url}"></entry>
+                <entry key="wchat.appID" value="${wchat.appID}"></entry>
+                <entry key="wchat.appsecret" value="${wchat.appsecret}"></entry>
+                <entry key="wchat.accToken.method" value="${wchat.accToken.method}"></entry>
+                <entry key="wchat.grant_type" value="${wchat.grant_type}"></entry>
+                <entry key="wchat.user.get.method" value="${wchat.user.get.method}"></entry>
+                <entry key="wchat.user.info.method" value="${wchat.user.info.method}"></entry>
+                <entry key="wchat.group.get.method" value="${wchat.group.get.method}"></entry>
+                <entry key="wchat.group.create.method" value="${wchat.group.create.method}"></entry>
+                <entry key="wchat.group.update.method" value="${wchat.group.update.method}"></entry>
+                <entry key="wchat.group.getId.method" value="${wchat.group.getId.method}"></entry>
+                <entry key="wchat.group.updateMembers.method" value="${wchat.group.updateMembers.method}"></entry>
+                <entry key="wchat.sendmsg.method" value="${wchat.sendmsg.method}"></entry>
+                <entry key="wchat.media.upload.method" value="${wchat.media.upload.method}"></entry>
+                <entry key="wchat.media.add.method" value="${wchat.media.add.method}"></entry>
+                <entry key="wchat.media.video.get.url" value="${wchat.media.video.get.url}"></entry>
+                <entry key="wchat.media.get.method" value="${wchat.media.get.method}"></entry>
+            </map>
+        </property>
+    </bean>
+
+
+</beans>
