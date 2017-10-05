@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+	   http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+">
+
+    <dubbo:application name="dubbo-consumer"/>
+    <dubbo:registry address="127.0.0.1:2181" protocol="zookeeper"/>
+    <!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
+    <!--<dubbo:annotation package="com.alibaba.dubbo.demo"/> -->
+
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
+    <dubbo:reference id="testService" interface="com.service.TestService"/>
+    <dubbo:reference id="wchatAccTokenService" interface="com.service.WchatAccTokenService"/>
+    <dubbo:reference id="wchatGroupService" interface="com.service.WchatGroupService"/>
+    <dubbo:reference id="wchatUserService" interface="com.service.WchatUserService"/>
+    <dubbo:reference id="wchatCustomerMessageService" interface="com.service.WchatCustomerMessageService"/>
+    <dubbo:reference id="wchatMediaService" interface="com.service.WchatMediaService"/>
+
+</beans>
