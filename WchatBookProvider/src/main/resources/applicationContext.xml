@@ -50,6 +50,7 @@
             </map>
         </property>
     </bean>
+    <import resource="hibernate.cfg.xml"/>
 
 
 </beans>
