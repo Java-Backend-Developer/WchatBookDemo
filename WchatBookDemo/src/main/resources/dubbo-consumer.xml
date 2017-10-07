@@ -9,7 +9,7 @@
 ">
 
     <dubbo:application name="dubbo-consumer"/>
-    <dubbo:registry address="127.0.0.1:2181" protocol="zookeeper"/>
+    <dubbo:registry address="18575t363y.51mypc.cn:2181" protocol="zookeeper" timeout="180000"/>
     <!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
     <!--<dubbo:annotation package="com.alibaba.dubbo.demo"/> -->
 
@@ -20,5 +20,7 @@
     <dubbo:reference id="wchatUserService" interface="com.service.WchatUserService"/>
     <dubbo:reference id="wchatCustomerMessageService" interface="com.service.WchatCustomerMessageService"/>
     <dubbo:reference id="wchatMediaService" interface="com.service.WchatMediaService"/>
+    <dubbo:reference id="userService" interface="com.service.UserService"/>
+    <dubbo:reference id="mobileLoginInfoService" interface="com.service.MobileLoginInfoService"/>
 
 </beans>
