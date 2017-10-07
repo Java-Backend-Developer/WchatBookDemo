@@ -18,4 +18,8 @@
 
     <dubbo:service interface="com.service.WchatMediaService" ref="wchatMediaUploadService" timeout="60000" protocol="dubbo"/>
 
+    <dubbo:service interface="com.service.UserService" ref="userService" timeout="60000" protocol="dubbo"/>
+
+    <dubbo:service interface="com.service.MobileLoginInfoService" ref="mobileLoginInfoService" timeout="60000" protocol="dubbo"/>
+
 </beans>

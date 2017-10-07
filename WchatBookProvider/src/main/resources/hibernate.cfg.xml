@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
     <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="${db.url}" />
-        <property name="username" value="${db.username}" />
-        <property name="password" value="${db.password}" />
-        <property name="maxActive" value="${db.maxActive}" />
-        <property name="maxIdle" value="${db.maxIdle}" />
-        <property name="maxWait" value="${db.maxWait}" />
-        <property name="initialSize" value="${db.initialSize}" />
-        <property name="minIdle" value="${db.minIdle}" />
-        <property name="validationQuery" value="${db.validationQuery}" />
-        <property name="removeAbandoned" value="${db.removeAbandoned}" />
-        <property name="removeAbandonedTimeout" value="${db.removeAbandonedTimeout}" />
-        <property name="logAbandoned" value="${db.logAbandoned}" />
-        <property name="useDisposableConnectionFacade" value="false" />
-        <property name="testOnBorrow" value="${db.testOnBorrow}" />
-        <property name="testWhileIdle" value="${db.testWhileIdle}" />
-        <property name="timeBetweenEvictionRunsMillis" value="${db.timeBetweenEvictionRunsMillis}" />
-        <property name="numTestsPerEvictionRun" value="${db.numTestsPerEvictionRun}" />
-        <property name="minEvictableIdleTimeMillis" value="${db.minEvictableIdleTimeMillis}" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="maxActive" value="${db.maxActive}"/>
+        <property name="maxIdle" value="${db.maxIdle}"/>
+        <property name="maxWait" value="${db.maxWait}"/>
+        <property name="initialSize" value="${db.initialSize}"/>
+        <property name="minIdle" value="${db.minIdle}"/>
+        <property name="validationQuery" value="${db.validationQuery}"/>
+        <property name="removeAbandoned" value="${db.removeAbandoned}"/>
+        <property name="removeAbandonedTimeout" value="${db.removeAbandonedTimeout}"/>
+        <property name="logAbandoned" value="${db.logAbandoned}"/>
+        <property name="useDisposableConnectionFacade" value="false"/>
+        <property name="testOnBorrow" value="${db.testOnBorrow}"/>
+        <property name="testWhileIdle" value="${db.testWhileIdle}"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${db.timeBetweenEvictionRunsMillis}"/>
+        <property name="numTestsPerEvictionRun" value="${db.numTestsPerEvictionRun}"/>
+        <property name="minEvictableIdleTimeMillis" value="${db.minEvictableIdleTimeMillis}"/>
     </bean>
 
     <bean id="sessionFactory"
@@ -32,14 +35,20 @@
         <property name="mappingResources">
             <list>
                 <!-- app -->
-                <value>com/test/test.hbm.xml</value>
+                <value>com/test/Test.hbm.xml</value>
+                <value>com/user/User.hbm.xml</value>
+                <value>com/user/UserInfo.hbm.xml</value>
+                <value>com/user/Role.hbm.xml</value>
+                <value>com/user/Permission.hbm.xml</value>
+                <value>com/picture/Picture.hbm.xml</value>
+                <value>com/user/MobileInfo.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <prop key="show_sql">true</prop>
-                <!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
+                <!-- <prop key="hibernate.hbm2ddl.auto">create</prop>-->
                 <prop key="hibernate.current_session_context_class">
                     org.springframework.orm.hibernate4.SpringSessionContext
                 </prop>

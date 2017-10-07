@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entity">
+    <class name="MobileLoginInfo" table="mobile_login_info" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <property name="invalid" column="invalid" type="boolean" />
+
+        <property name="status" column="status" type="integer" />
+
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+        <many-to-one name="user"  class="com.entity.User" column="user_id" cascade="none" foreign-key="none" />
+
+        <property name="appToken" column="app_token" type="integer" />
+
+        <property name="serial" column="serial" type="string" />
+
+        <property name="model" column="model" type="string" />
+
+        <property name="mobilename" column="mobile_name" type="string" />
+
+        <property name="version" column="version" type="string" />
+
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entity">
+    <class name="Role" table="role" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <property name="invalid" column="invalid" type="boolean" />
+
+        <property name="status" column="status" type="integer" />
+
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+        <many-to-one name="user"  class="com.entity.User" column="user_id" cascade="none" foreign-key="none" />
+
+        <set name="permission" table="permission" order-by="updatedDatetime">
+            <key>
+                <column name="role"/>
+            </key>
+            <one-to-many class="com.entity.Permission" />
+        </set>
+
+        <property name="code" column="code" type="string" />
+
+        <property name="name" column="name" type="string" />
+
+        <property name="description" column="description" type="string" />
+
+        <property name="type" column="type" type="integer" />
+
+        <property name="parentId" column="parent_id" type="long" />
+
+        <property name="isLeaf" column="is_leaf" type="boolean" />
+
+    </class>
+</hibernate-mapping>

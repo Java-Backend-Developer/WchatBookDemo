@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entity">
+    <class name="User" table="user" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <property name="invalid" column="invalid" type="boolean" />
+
+        <property name="status" column="status" type="integer" />
+
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+        <many-to-one name="user"  class="com.entity.User" column="user_id" cascade="none" foreign-key="none" />
+
+        <many-to-one name="userInfo"  class="com.entity.UserInfo" column="user_info_id" cascade="none" foreign-key="none" />
+
+        <property name="username" column="user_name" type="string" />
+
+        <property name="password" column="password" type="string" />
+
+        <property name="email" column="email" type="string" />
+
+        <property name="mobile" column="mobile" type="string" />
+
+        <property name="type" column="type" type="integer" />
+
+        <many-to-one name="role"  class="com.entity.Role" column="role_id" cascade="none" foreign-key="none" />
+
+    </class>
+</hibernate-mapping>

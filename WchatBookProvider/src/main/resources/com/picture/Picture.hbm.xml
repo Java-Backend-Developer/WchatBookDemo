@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entity">
+    <class name="Picture" table="picture" dynamic-update="true">
+
+        <id name="id" column="id" type="long">
+            <generator class="native" />
+        </id>
+
+        <property name="invalid" column="invalid" type="boolean" />
+
+        <property name="status" column="status" type="integer" />
+
+        <property name="createdDatetime" column="created_datetime" type="timestamp" />
+
+        <property name="updatedDatetime" column="updated_datetime" type="timestamp" />
+
+        <many-to-one name="user"  class="com.entity.User" column="user_id" cascade="none" foreign-key="none" />
+
+
+        <property name="path" column="path" type="string" />
+
+        <property name="url" column="url" type="string" />
+
+        <property name="width" column="width" type="integer" />
+
+        <property name="height" column="height" type="integer" />
+
+        <property name="original" column="original" type="long" />
+
+    </class>
+</hibernate-mapping>

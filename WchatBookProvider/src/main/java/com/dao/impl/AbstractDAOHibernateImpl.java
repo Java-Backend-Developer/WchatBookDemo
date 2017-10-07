@@ -82,7 +82,7 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
         // 最近修改时间
         abstractEntity.setUpdatedDatetime(new Timestamp(System.currentTimeMillis()));
         if (null == abstractEntity.getInvalid()) {
-            abstractEntity.setInvalid(false);
+            abstractEntity.setInvalid(true);
         }
         if (null == abstractEntity.getStatus()) {
             abstractEntity.setStatus(0);
@@ -106,7 +106,7 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
     @Override
     public int remove(Long id) {
         AbstractEntity abstractEntity = get(id);
-        abstractEntity.setInvalid(true);
+        abstractEntity.setInvalid(false);
         // 最近修改时间
         abstractEntity.setUpdatedDatetime(new Timestamp(System.currentTimeMillis()));
         getHibernateTemplate().update(abstractEntity);
@@ -191,7 +191,7 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
      *            -----------------------查询参数
      * @param entity
      *            -----------------------查询对象，必须继承AbstractEntity
-     * @param aliasToEntity
+     * @param falgMap
      *            -----------------------true或false----ture表示转换成map，false不进行转换
      * @return
      * @author gwb
@@ -296,10 +296,10 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
      * 
      * @Description
      * @param hql
-     * @param hqlResultParameter
+     * @param
      * @param ls
-     * @param entity
-     * @param aliasToEntity
+     * @param
+     * @param
      * @return
      * @author gwb
      * @date 2015年12月12日 下午1:40:11
@@ -367,8 +367,8 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
      * 分页查询
      * 
      * @Description
-     * @param hql
-     *            -----------------------hql ----
+     * @param sql
+     *            -----------------------sql ----
      * @param hqlResultParameter
      *            -----------------------要查询的字段，可以为NULL
      * @param ls
@@ -411,7 +411,7 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
      * 查询分页总数 通过
      * 
      * @Description
-     * @param hql
+     * @param Sql
      * @param ls
      * @return
      * @author gwb
@@ -432,11 +432,11 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
      * HibernateCallback ---查询分页
      * 
      * @Description
-     * @param hql
-     * @param hqlResultParameter
-     * @param ls
-     * @param entity
-     * @param aliasToEntity
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
      *            <p>
      *            Transformers.aliasToBean(GesStoreVO.class) ----------对应的Vo
      *            <p>

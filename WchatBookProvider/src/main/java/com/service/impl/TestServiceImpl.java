@@ -6,10 +6,13 @@ import com.test.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 /**
  * Created by Administrator on 2017/9/30.
  */
 @Service("testService")
+@Transactional
 public class TestServiceImpl implements TestService {
 
     @Autowired

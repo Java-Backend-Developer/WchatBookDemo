@@ -10,10 +10,10 @@
 
     <context:component-scan base-package="com"/>
 
-    <dubbo:application name="WchatBook-provider" owner="programmer" organization="dubbox"/>
+    <dubbo:application name="WchatBook-provider" owner="programmer" organization="dubbox" />
 
 
-    <dubbo:registry address="127.0.0.1:2181" protocol="zookeeper"/>
+    <dubbo:registry address="18575t363y.51mypc.cn:2181" protocol="zookeeper" timeout="180000"/>
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880" />
