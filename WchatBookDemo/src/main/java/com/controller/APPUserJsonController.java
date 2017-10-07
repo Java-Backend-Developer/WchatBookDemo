@@ -71,8 +71,10 @@ public class APPUserJsonController {
     public JsonResult appLoginOut(User user) throws Exception {
         MobileLoginInfo mobileLoginInfo = new MobileLoginInfo();
         mobileLoginInfo.setUser(user);
-        mobileLoginInfoService.remove(mobileLoginInfo);
+        boolean resulet = mobileLoginInfoService.remove(mobileLoginInfo);
+        if(resulet)
         return new JsonResult("0","SUCCESS",null);
+        return new JsonResult("-1","FAIL",null);
     }
 
     @RequestMapping("app_user_update")
