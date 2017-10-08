@@ -75,6 +75,8 @@ public class LabelDAOImpl extends AbstractDAOHibernateImpl implements LabelDAO {
                 hql.append("  and l.status = ? ");
                 params.add(label.getStatus());
             }
+        }else {
+            label = new Label();
         }
         return super.findByPageHql(hql.toString(), null, params, label, false);
     }

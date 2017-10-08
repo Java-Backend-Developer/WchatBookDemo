@@ -51,21 +51,25 @@ public class PermissionDAOImpl extends AbstractDAOHibernateImpl implements Permi
         List params = new ArrayList();
         hql.append(" from Permission p where p.invalid = ?");
         params.add(true);
-        if (permission.getId() != null) {
-            hql.append(" and p.id = ?");
-            params.add(permission.getId());
-        }
-        if (permission.getCode() != null) {
-            hql.append(" and p.code like ?");
-            params.add("%" + permission.getCode() + "%");
-        }
-        if (permission.getName() != null) {
-            hql.append(" and p.name like ?");
-            params.add("%" + permission.getName() + "%");
-        }
-        if (permission.getStatus() != null) {
-            hql.append(" and p.status = ?");
-            params.add(permission.getStatus());
+        if (permission!=null) {
+            if (permission.getId() != null) {
+                hql.append(" and p.id = ?");
+                params.add(permission.getId());
+            }
+            if (permission.getCode() != null) {
+                hql.append(" and p.code like ?");
+                params.add("%" + permission.getCode() + "%");
+            }
+            if (permission.getName() != null) {
+                hql.append(" and p.name like ?");
+                params.add("%" + permission.getName() + "%");
+            }
+            if (permission.getStatus() != null) {
+                hql.append(" and p.status = ?");
+                params.add(permission.getStatus());
+            }
+        } else {
+            permission = new Permission();
         }
         return super.findByPageHql(hql.toString(), null, params, permission, false);
     }

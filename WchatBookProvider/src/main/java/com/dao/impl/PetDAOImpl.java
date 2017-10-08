@@ -78,6 +78,8 @@ public class PetDAOImpl extends AbstractDAOHibernateImpl implements PetDAO {
                 }
 
             }
+        } else {
+            pet = new Pet();
         }
         return super.findByPageHql(hql.toString(), null, params, pet, false);
     }

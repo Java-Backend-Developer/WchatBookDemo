@@ -79,6 +79,8 @@ public class MobileLoginInfoDAOImpl extends AbstractDAOHibernateImpl implements 
                 hql.append(" and m.versionCode like ?");
                 params.add("%" + mobileLoginInfo.getVersionCode() + "%");
             }
+        }else {
+            mobileLoginInfo = new MobileLoginInfo();
         }
         return super.findByPageHql(hql.toString(), null, params, mobileLoginInfo, false);
     }

@@ -30,4 +30,6 @@
 
     <dubbo:service interface="com.service.PetService" ref="petService" timeout="60000" protocol="dubbo"/>
 
+    <dubbo:service interface="com.service.PictureService" ref="pictureService" timeout="60000" protocol="dubbo"/>
+
 </beans>

@@ -2,9 +2,11 @@ package com.dao;
 
 import com.entity.AbstractEntity;
 
+import java.io.Serializable;
+
 public interface IDAO {
 
-     void add(AbstractEntity abstractEntity);
+     Serializable add(AbstractEntity abstractEntity);
 
      boolean update(AbstractEntity abstractEntity);
 

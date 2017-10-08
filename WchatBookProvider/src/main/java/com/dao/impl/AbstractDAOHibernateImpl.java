@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate4.HibernateCallback;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 
 import javax.annotation.Resource;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -38,7 +39,7 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
     }
 
     @Override
-    public void add(AbstractEntity abstractEntity) {
+    public Serializable add(AbstractEntity abstractEntity) {
         // 创建时间
         abstractEntity.setCreatedDatetime(new Timestamp(System.currentTimeMillis()));
         // 最近修改时间
@@ -52,7 +53,7 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
         if (null == abstractEntity.getOrderTag() || 0 == abstractEntity.getOrderTag()) {
             abstractEntity.setOrderTag(1);
         }
-        getHibernateTemplate().save(abstractEntity);
+       return  getHibernateTemplate().save(abstractEntity);
     }
 
     @Override

@@ -114,6 +114,8 @@ public class UserDAOImpl extends AbstractDAOHibernateImpl implements UserDAO {
                     params.add(user.getRole().getParentId());
                 }
             }
+        } else {
+            user = new User();
         }
         return (List<User>) super.findByPageHql(hql.toString(), null, params, user, false);
     }
