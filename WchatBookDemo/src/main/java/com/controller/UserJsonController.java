@@ -21,8 +21,8 @@ public class UserJsonController {
     private UserService userService;
 
     @RequestMapping("login")
-    public JsonResult login(HttpSession session, String username, String password){
-        User  user = userService.queryUserByParam(username, password);
+    public JsonResult login(HttpSession session, User user){
+        user = userService.queryByParam(user);
         if(user!=null){
             session.setAttribute("user_id",user.getId());
         }

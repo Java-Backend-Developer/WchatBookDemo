@@ -26,5 +26,6 @@
     <dubbo:reference id="permissionService" interface="com.service.PermissionService"/>
     <dubbo:reference id="labelService" interface="com.service.LabelService"/>
     <dubbo:reference id="petService" interface="com.service.PetService"/>
+    <dubbo:reference id="pictureService" interface="com.service.PictureService"/>
 
 </beans>
