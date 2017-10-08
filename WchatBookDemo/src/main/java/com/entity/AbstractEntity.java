@@ -9,10 +9,10 @@ public abstract class AbstractEntity {
 
     /**
      * 
-     * 该记录是否无效： true 无效 false 有效 默认值为false 方法中实现
+     * 该记录是否无效： true 有效 false 无效 默认值为true 方法中实现
      * 
      */
-    private Boolean invalid ;
+    private Boolean invalid = true;
 
     /**
      * 默认值为1 方法中实现

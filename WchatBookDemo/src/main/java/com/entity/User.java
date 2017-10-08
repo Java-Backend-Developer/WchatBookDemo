@@ -9,12 +9,7 @@ public class User extends AbstractEntity {
     private String email;
     private String mobile;
     private Integer type;
-
-    /**
-     * 当前平台的用户信息，为了传输的方便，不做数据库映射
-     */
     private UserInfo userInfo;
-
     private Role role;
 
     public String getUsername() {

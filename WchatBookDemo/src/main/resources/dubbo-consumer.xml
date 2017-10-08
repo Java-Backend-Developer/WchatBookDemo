@@ -22,5 +22,9 @@
     <dubbo:reference id="wchatMediaService" interface="com.service.WchatMediaService"/>
     <dubbo:reference id="userService" interface="com.service.UserService"/>
     <dubbo:reference id="mobileLoginInfoService" interface="com.service.MobileLoginInfoService"/>
+    <dubbo:reference id="roleService" interface="com.service.RoleService"/>
+    <dubbo:reference id="permissionService" interface="com.service.PermissionService"/>
+    <dubbo:reference id="labelService" interface="com.service.LabelService"/>
+    <dubbo:reference id="petService" interface="com.service.PetService"/>
 
 </beans>
