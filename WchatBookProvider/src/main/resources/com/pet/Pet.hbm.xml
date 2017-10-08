@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.entity">
-    <class name="User" table="user" dynamic-update="true">
+    <class name="Pet" table="pet" dynamic-update="true">
 
         <id name="id" column="id" type="long">
             <generator class="native" />
@@ -17,19 +17,25 @@
 
         <many-to-one name="user"  class="com.entity.User" column="user_id" cascade="none" foreign-key="none" />
 
-        <many-to-one name="userInfo"  class="com.entity.UserInfo" column="user_info_id" cascade="save-update" foreign-key="none" />
+        <set name="labels" table="label" order-by="updatedDatetime">
+            <key>
+                <column name="pet"/>
+            </key>
+            <one-to-many class="com.entity.Label" />
+        </set>
 
-        <property name="username" column="user_name" type="string" />
-
-        <property name="password" column="password" type="string" />
-
-        <property name="email" column="email" type="string" />
-
-        <property name="mobile" column="mobile" type="string" />
+        <set name="pictures" table="picture" order-by="updatedDatetime">
+            <key>
+                <column name="pet"/>
+            </key>
+            <one-to-many class="com.entity.Picture" />
+        </set>
 
         <property name="type" column="type" type="integer" />
 
-        <many-to-one name="role"  class="com.entity.Role" column="role_id" cascade="none" foreign-key="none" />
+        <property name="name" column="name" type="string" />
+
+        <property name="description" column="description" type="string" />
 
     </class>
 </hibernate-mapping>

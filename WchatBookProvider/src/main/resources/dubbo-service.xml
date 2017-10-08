@@ -22,4 +22,12 @@
 
     <dubbo:service interface="com.service.MobileLoginInfoService" ref="mobileLoginInfoService" timeout="60000" protocol="dubbo"/>
 
+    <dubbo:service interface="com.service.RoleService" ref="roleService" timeout="60000" protocol="dubbo"/>
+
+    <dubbo:service interface="com.service.PermissionService" ref="permissionService" timeout="60000" protocol="dubbo"/>
+
+    <dubbo:service interface="com.service.LabelService" ref="labelService" timeout="60000" protocol="dubbo"/>
+
+    <dubbo:service interface="com.service.PetService" ref="petService" timeout="60000" protocol="dubbo"/>
+
 </beans>

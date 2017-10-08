@@ -96,21 +96,21 @@ abstract public class AbstractDAOHibernateImpl implements IDAO {
     }
 
     @Override
-    public int update(AbstractEntity abstractEntity) {
+    public boolean update(AbstractEntity abstractEntity) {
         // 最近修改时间
         abstractEntity.setUpdatedDatetime(new Timestamp(System.currentTimeMillis()));
         getHibernateTemplate().update(abstractEntity);
-        return 1;
+        return true;
     }
 
     @Override
-    public int remove(Long id) {
+    public boolean remove(Long id) {
         AbstractEntity abstractEntity = get(id);
         abstractEntity.setInvalid(false);
         // 最近修改时间
         abstractEntity.setUpdatedDatetime(new Timestamp(System.currentTimeMillis()));
         getHibernateTemplate().update(abstractEntity);
-        return 1;
+        return true;
     }
 
     @Override

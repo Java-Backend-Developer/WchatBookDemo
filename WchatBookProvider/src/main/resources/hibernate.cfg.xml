@@ -36,19 +36,24 @@
             <list>
                 <!-- app -->
                 <value>com/test/Test.hbm.xml</value>
+                <!-- user -->
                 <value>com/user/User.hbm.xml</value>
                 <value>com/user/UserInfo.hbm.xml</value>
                 <value>com/user/Role.hbm.xml</value>
                 <value>com/user/Permission.hbm.xml</value>
-                <value>com/picture/Picture.hbm.xml</value>
                 <value>com/user/MobileInfo.hbm.xml</value>
+                <!-- picture -->
+                <value>com/picture/Picture.hbm.xml</value>
+                <!-- pet -->
+                <value>com/pet/Pet.hbm.xml</value>
+                <value>com/pet/Label.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <prop key="show_sql">true</prop>
-                <!-- <prop key="hibernate.hbm2ddl.auto">create</prop>-->
+               <!-- <prop key="hibernate.hbm2ddl.auto">create</prop>-->
                 <prop key="hibernate.current_session_context_class">
                     org.springframework.orm.hibernate4.SpringSessionContext
                 </prop>

@@ -23,9 +23,9 @@
 
         <property name="model" column="model" type="string" />
 
-        <property name="mobilename" column="mobile_name" type="string" />
+        <property name="appUserName" column="app_user_name" type="string" />
 
-        <property name="version" column="version" type="string" />
+        <property name="versionCode" column="version_code" type="string" />
 
 
     </class>

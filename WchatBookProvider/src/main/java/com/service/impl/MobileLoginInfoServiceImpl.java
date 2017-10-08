@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/10/6.
@@ -24,17 +25,18 @@ public class MobileLoginInfoServiceImpl implements MobileLoginInfoService {
     }
 
     @Override
-    public MobileLoginInfo get(Long id) {
-        return mobileLoginInfoDAO.get(id);
-    }
-
-    @Override
     public boolean remove(MobileLoginInfo mobileLoginInfo) {
         return mobileLoginInfoDAO.remove(mobileLoginInfo);
     }
 
     @Override
-    public MobileLoginInfo queryBySerial(String serial) {
-        return mobileLoginInfoDAO.queryBySerial(serial);
+    public MobileLoginInfo queryByParam(MobileLoginInfo mobileLoginInfo) {
+        return mobileLoginInfoDAO.queryByParam(mobileLoginInfo);
     }
+
+    @Override
+    public List<MobileLoginInfo> pageByParam(MobileLoginInfo mobileLoginInfo) {
+        return mobileLoginInfoDAO.pageByParam(mobileLoginInfo);
+    }
+
 }

@@ -2,12 +2,14 @@ package com.service;
 
 import com.entity.MobileLoginInfo;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/10/6.
  */
 public interface MobileLoginInfoService {
     boolean add(MobileLoginInfo mobileLoginInfo);
-    MobileLoginInfo get(Long id);
     boolean remove(MobileLoginInfo mobileLoginInfo);
-    MobileLoginInfo queryBySerial(String serial);
+    MobileLoginInfo queryByParam(MobileLoginInfo mobileLoginInfo);
+    List<MobileLoginInfo> pageByParam(MobileLoginInfo mobileLoginInfo);
 }

@@ -4,15 +4,15 @@ import com.entity.AbstractEntity;
 
 public interface IDAO {
 
-    public void add(AbstractEntity abstractEntity);
+     void add(AbstractEntity abstractEntity);
 
-    public int update(AbstractEntity abstractEntity);
+     boolean update(AbstractEntity abstractEntity);
 
-    public int remove(Long id);
+     boolean remove(Long id);
 
-    public int delete(Long id);
+     int delete(Long id);
 
-    public void saveOrUpdate(AbstractEntity abstractEntity);
+     void saveOrUpdate(AbstractEntity abstractEntity);
 
     boolean saveResultBoolean(AbstractEntity abstractEntity);
     

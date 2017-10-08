@@ -12,7 +12,7 @@ public  class UserInfo extends AbstractEntity {
 
     private String realName;
 
-    private byte sex;
+    private Byte sex;
 
 
     public Integer getType() {
@@ -39,11 +39,11 @@ public  class UserInfo extends AbstractEntity {
         this.realName = realName;
     }
 
-    public byte getSex() {
+    public Byte getSex() {
         return sex;
     }
 
-    public void setSex(byte sex) {
+    public void setSex(Byte sex) {
         this.sex = sex;
     }
 }
