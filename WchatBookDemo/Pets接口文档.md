@@ -745,3 +745,34 @@
               "msg" :String
               "data":List<Pet>
               }
+
+##公用
+### 方法名：图片上传 upload
+
+    * login 
+        - 相对路径：/picture/upload
+        - 注释：
+        - 参数：
+            * MultipartFile file *
+              
+        - 注释：
+        - 返回结果：Json`        
+             {"ret" : String
+              "msg" :String
+              "data":id:Long
+              }
+### 方法名：图片下载 download
+
+    * login 
+        - 相对路径：/picture/download
+        - 注释：
+        - 参数：
+              {"id":Long *
+              }
+              
+        - 注释：
+        - 返回结果：Json`        
+             {"ret" : String
+              "msg" :String
+              "data":
+              }

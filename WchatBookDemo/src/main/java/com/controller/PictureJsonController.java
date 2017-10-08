@@ -27,7 +27,7 @@ import java.net.URLEncoder;
  * Created by Administrator on 2017/10/8.
  */
 @RestController
-@RequestMapping("file")
+@RequestMapping("picture")
 public class PictureJsonController {
 
     @Autowired
