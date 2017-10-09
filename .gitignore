@@ -1,0 +1,7 @@
+# Create by .ignore support plugin (hsz.mobi)
+.DS_Store
+.idea
+WchatBookDemo/.idea
+WchatBookDemo/WchatBookDemo.iml
+WchatBookProvider/.idea
+WchatBookProvider/WchatBookProvider.iml
