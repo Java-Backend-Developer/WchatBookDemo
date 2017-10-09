@@ -1,5 +1,7 @@
+[TOC]
 
 ##用户相关
+
 ### 方法名：用户登录 login
 
     * login 
@@ -12,8 +14,8 @@
                 - 类型：String
                 - 约束：notNull
                 - 注释：登录账号密码
-           
-               
+
+
         - 返回结果：Json`        
              {"ret" : String
               "msg" :String
@@ -36,7 +38,7 @@
                                                "url":String,
                                                "width":String,
                                                "height":String,
-	                                           "status":int,
+                                               "status":int,
                                                "createdDatetime":Timestamp,
                                                "updatedDatetime":Timestamp,
                                                "user":user
@@ -69,7 +71,7 @@
                                              ]
                                 
                                }
-
+    
                       }
               }
 
@@ -143,7 +145,7 @@
                                     "picture":{"id":long
                                                }
                                    }
-
+    
                       }
               
                 - 注释：
@@ -204,7 +206,7 @@
                                                "url":String,
                                                "width":String,
                                                "height":String,
-	                                           "status":int,
+                                               "status":int,
                                                "createdDatetime":Timestamp,
                                                "updatedDatetime":Timestamp,
                                                "user":user
@@ -237,7 +239,7 @@
                                              ]
                                 
                                }
-
+    
                       }             
               }
 
@@ -265,7 +267,7 @@
                                }
                         "start":int  
                         "pageSize":int 
-
+    
                       }
     
         - 返回结果：Json`        
@@ -289,7 +291,7 @@
                                                "url":String,
                                                "width":String,
                                                "height":String,
-	                                           "status":int,
+                                               "status":int,
                                                "createdDatetime":Timestamp,
                                                "updatedDatetime":Timestamp,
                                                "user":user
@@ -322,7 +324,7 @@
                                              ]
                                 
                                }
-
+    
                       }]             
               }
 
@@ -357,7 +359,7 @@
         - 参数：
             * Json`        
                  {"id":long,
-				  "code":String.
+    			  "code":String.
                   "name":String
                  }
               
@@ -400,7 +402,7 @@
         - 参数：
             * Json`        
                  {"id:long,
-				  "code":String,
+    			  "code":String,
                   "name":String             
                  }
               
@@ -464,7 +466,7 @@
         - 参数：
             * Json`        
                  {"id":long,
-				  "code":String.
+    			  "code":String.
                   "name":String
                  }
               
@@ -566,7 +568,7 @@
         - 参数：
             * Json`        
                  {"id":long,
-				  "code":String.
+    			  "code":String.
                   "name":String
                  }
               
