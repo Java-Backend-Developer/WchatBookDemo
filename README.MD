@@ -2,4 +2,4 @@
 
 
 
-[接口文档](WchatBookDemo/WchatBookDemo/Pets接口文档.md)
+[接口文档](WchatBookDemo/Pets接口文档.md)
